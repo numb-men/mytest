@@ -1,7 +1,8 @@
 readme.md
-/test_files/hello.java
-/test_files/hello.c
-/test_files/mytest.py
-/test_files/index.html
-/test_files/index.css
-/test_files/index.js
+./test_files/hello.java
+./test_files/hello.c
+./test_files/mytest.py
+./test_files/test.html
+./test_files/test.css
+./test_files/ÎŞÁÄµÄtxt.txt
+./test_files/test.js

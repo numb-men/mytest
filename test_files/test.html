@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <meta charset="utf-8">
+  <meta name="description" content="为网页定义描述内容">
+  <meta name="author" content="le">
+  <title>Test</title>
+  <script>document.createElement("myHero")</script>
+  <!--内部样式表-->
+  <style type="text/css">
+   h1{color:red;}
+   p{color:blue;}
+   a{text-decoration: none}
+  </style>
+  <!--链接到外部的样式表-->
+  <link rel="stylesheet" type="text/css" href="./test.css">
+ </head>
+
+ <body>
+ 	<form action="">
+	First name: <input type="text" name="firstname"><br>
+	Last name: <input type="text" name="lastname">
+	</form>
+<form action="">
+Username: <input type="text" name="user"><br>
+Password: <input type="password" name="password">
+</form>
+<form action="">
+<input type="radio" name="sex" value="male">Male<br>
+<input type="radio" name="sex" value="female">Female
+</form>
+<form>
+<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+<input type="checkbox" name="vehicle" value="Car">I have a car 
+</form>
+<form name="input" action="html_form_action.php" method="get">
+Username: <input type="text" name="user">
+<input type="submit" value="Submit">
+</form>
+<form action="">
+<select name="cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="fiat" selected="selected">Fiat</option>
+<option value="audi">Audi</option>
+</select>
+</form>
+<textarea rows="10" cols="30">
+我是一个文本框。
+</textarea>
+<form action="">
+<input type="button" value="Hello world!">
+</form>
+<form action="">
+<fieldset>
+<legend>Personal information:</legend>
+Name: <input type="text" size="30"><br>
+E-mail: <input type="text" size="30"><br>
+Date of birth: <input type="text" size="10">
+</fieldset>
+</form>
+<form action="demo-form.php" method="get">
+  <input type="radio" name="sex" value="Male"> Male<br>
+  <input type="radio" name="sex" value="Female" checked="checked"> Female<br>
+  <input type="submit" value="提交">
+</form>
+<p><b>注意：</b> 密码字段中的字符是隐藏的(显示为星号或圆圈)。</p>
+
+<p><b>注意：</b> 表单本身是不可见的。并且注意一个文本字段的默认宽度是20个字符。</p>
+<iframe src="./test2.html" width="200" height="200" frameborder="0"></iframe>
+<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="./test3.html" target="iframe_a">Test3</a></p>
+<p style="background-color:rgb(255,255,0)">
+通过 rbg 值设置背景颜色
+</p>
+<p style="background-color:rgba(255,255,0,0.25)">
+通过 rbg 值设置背景颜色
+</p>
+<p style="background-color:rgba(255,255,0,0.5)">
+通过 rbg 值设置背景颜色
+</p>
+<p style="background-color:rgba(255,255,0,0.75)">
+通过 rbg 值设置背景颜色
+</p>
+<script>
+document.write("Hello World!插入JavaScript脚本")
+</script> 
+<noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+<h1>我的第一个 JavaScript </h1>
+
+<p id="demo">
+JavaScript 可以触发事件，就像按钮点击。</p>
+
+<script>
+function myFunction()
+{
+	document.getElementById("demo").innerHTML="Hello JavaScript!";
+}
+</script>
+
+<button type="button" onclick="myFunction()">点我</button>
+
+<p><b>注意：</b> 因为 a 标签的 target 属性是名为 iframe_a 的 iframe 框架，所以在点击链接时页面会显示在 iframe框架中。</p>
+
+<p>一些旧的浏览器不支持 iframe。</p>
+<p>如果浏览器不支持 iframes 则不会显示。</p>
+  <h1>我的第一个标题</h1>
+  <!--表格-->
+  <table border="1" cellpadding="10" cellspacing="0">
+   <tr>
+   	<th>表头啊</th>
+    <th>第二个表头啊</th>
+   </tr>
+   <tr>
+    <td>
+     <ul>
+      <li>标签1</li>
+      <li>标签2</li>
+     </ul>
+    </td>
+    <td>row 1, cell 2</td>
+   </tr>
+   <tr>
+     <td>row 2, cell 1</td>
+     <td>row 2, cell 2</td>
+   </tr>
+</table>
+  <font size="6">这是6号字体文本</font>
+  <br>
+  <h2>我的第二个标题</h2>
+  <h3>我的第三个标题</h3>
+  <p>我的第一个段落。</p>
+  <b>加粗</b><br><br>
+  <i>斜体</i><br><br>
+  <div class="div"> 
+     文本显示为单行,超过部分隐藏并使用省略号
+     修改 width 属性查看效果。
+  </div>
+  <pre>
+   pre标签是会区分空格和回车的啊 啊啊啊
+   啊a
+  </pre>
+  <abbr title="这是一个缩略词">缩略词</abbr>
+  <code>自动输出格式</code><br><br>
+  <a href="http://www.baidu.com">这是一个百度链接</a>
+  <br>
+  <a href="./test.html">
+  	<p>hhhhhhhhhhh
+  	 <img src="./img/test.jpg" style="float:left" alt = "这是一个图片链接" width = "200" height = "200">
+  	</p>
+  </a>
+  <!-- 水平线 -->
+  <hr>	​​
+  <myHero>我的第一个新元素</myHero>
+  <div style="opacity:0.5;position:absolute;left:50px;width:300px;height:150px;background-color:#40B3DF"></div>
+
+  <div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;">
+
+  <div style="opacity:0.3;position:absolute;left:120px;width:100px;height:200px;background-color:#8AC007"></div>
+
+  <h3>Look! Styles and colors</h3>
+
+  <div style="letter-spacing:12px;">Manipulate Text</div>
+
+  <div style="color:#40B3DF;">Colors
+  <span style="background-color:#B4009E;color:#ffffff;">Boxes</span>
+  </div>
+
+  <div style="color:#000000;">and more...</div>
+
+  </div>
+ </body>
+</html>

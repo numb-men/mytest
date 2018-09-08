@@ -19,15 +19,15 @@ public class MyTest{
 			System.out.println("You do not provide a running parameter to the program.");
 			files = mytest.getInputFiles("");
 		}
-		
+		Scanner scanner = new Scanner(System.in); 
 		if (files != null){
-			for (int i = 0; i < files.length; i++){
-				System.out.println(files[i] + ":");
-				System.out.println(mytest.readToString(files[i], "UTF-8"));
-			}
-			
-			System.out.println("---------------------------------------------------------------------------------------------");
-			System.out.println("All files have been output.");
+			for (int i = 0; files[i] != null && i < files.length; i++){
+				System.out.println("---------------------------------" + "file  " + (i+1) + ": " + files[i] + "---------------------------------------");
+				System.out.println(mytest.readToString(files[i], "GBK", false)); //false设置自动根据后缀进行编码
+				System.out.println("\nenter to read next file.");
+				scanner.nextLine();
+			}//GBK UTF-8 BIG5
+			System.out.println("\n\nAll files have been output.");
 		}
 		
 		System.out.println("Thank you for your use!");
@@ -60,15 +60,15 @@ public class MyTest{
 		BufferedReader reader = null;
 		try{
 			reader = new BufferedReader(new FileReader(file));
-			for(int i = 0; (temp=reader.readLine())!=null && i < 100; i++){
+			for(int i = 0, len = 0; (temp=reader.readLine())!=null && len < 100; i++){
 				
 				ftemp = new File(temp);
 				if (ftemp.exists()){
 					//如果文件真的存在，无误的话
 					//存入files
-					files[files.length] = temp;
+					files[len++] = temp;
 				}else{
-					System.out.println("line"+ (i+1) + ": " + "'" + temp + "'" + " does not exist!");
+					System.out.println("In file "+ "'" + file.getName() +"'" +"line "+ (i+1) + ": " + "'" + temp + "'" + " does not exist!");
 				}
 			}
 		}
@@ -89,10 +89,18 @@ public class MyTest{
 		return files;
 	}
 	
-	public String readToString(String fileName, String encoding) {  
+	public String readToString(String fileName, String encoding, boolean use_encoding) {  
 	//以encoding格式读取整个文件作为String返回，不会忽略空格、回车，好用啊
         File file = new File(fileName);  
-        Long filelength = file.length();  
+        Long filelength = file.length(); 
+		if(!use_encoding){
+			String suffix = fileName.substring(fileName.lastIndexOf(".") + 1); //后缀
+			if(suffix.equals("txt")){
+				encoding = "GBK";
+			}else{
+				encoding = "UTF-8";
+			}
+		}
         byte[] filecontent = new byte[filelength.intValue()];  
         try {  
             FileInputStream in = new FileInputStream(file);  
